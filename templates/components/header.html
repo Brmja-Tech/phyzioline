@@ -101,6 +101,18 @@
                   </li>
                   {% else %}
                   <li>
+                    <form action="{% url 'set_language' %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <input name="next" type="hidden" value="{{ request.path }}">
+                        <input type="hidden" name="language" value="{% if LANGUAGE_CODE == 'en' %}ar{% else %}en{% endif %}">
+                        <button type="submit" style="background: none; border: none;">
+                            <span style="color: #fff; border: 1px solid #fff; font-size: 24px; padding: 2px;">
+                                {% if LANGUAGE_CODE == 'en' %}AR{% else %}EN{% endif %}
+                            </span>
+                        </button>
+                    </form>
+                </li>
+                  <li>
                     <button type="button" class="main-search-btn" data-toggle="collapse" data-target="#main-search-collapse" aria-expanded="false" aria-controls="main-search-collapse"><i class="la la-search"></i></button>
                   </li>
                   <li>
