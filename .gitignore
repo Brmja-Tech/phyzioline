@@ -2,7 +2,6 @@ env
 env/*
 *.conf
 .env
-db.sqlite3
 __pycache__/
 *.pyc
 .env
